@@ -2,13 +2,15 @@
 #include <stdlib.h>
 
 #define MAX_LENGTH 100
-
+/*TODO: Follow your codestyle
+*/
 my_atoi (char *PassStr) {
     int i;
     int number = 0;
     for (i= 0; PassStr[i] == ' '; i++) {}
-    while ((47<PassStr[i])&&(PassStr[i]<58)&&(PassStr != '\n')) {
-        number = number*10 + (PassStr[i] - 48);
+    while ((47<PassStr[i])&&(PassStr[i]<58)&&(PassStr != '\n')) {   // It can not be compiled.
+																	//TODO: It's better to write char(e.g. 'a'), not number. 
+        number = number*10 + (PassStr[i] - 48);// no codestyle
         i++;
     }
     return number;
@@ -88,9 +90,11 @@ char * my_strstr( const char * string1, const char * string2 ) {
     if ( code == -1 ) {
         return NULL;
     } else {
-        return &string1[code];
+        return &string1[code];//TODO: First: better - string1 + code.
+							  // 	  Second:It warns. I'd used another variable char* str_to_find = (char*)string1; 
     }
 }
+
 char * my_strcpy( char * destptr, const char * srcptr ) {
     int i, leng_src;
     leng_src = my_strlen(srcptr);
@@ -100,6 +104,32 @@ char * my_strcpy( char * destptr, const char * srcptr ) {
     destptr[i] = '\0';
     return destptr;
 }
+
+
+/*TODO: Implement testing.
+	You input some data into your functions. And compare output  with what you expect to get.
+	
+	Example:
+		int testNumber = 0;
+		int failed_tests[NUM_TESTS] = {};
+		int last_failed = 0;
+		...
+		int positive_number = 1234;
+		char positive_string[33] = {};
+		testNumber++;
+		_itoa(positive_number,positive_string);
+		printf("%i Test positive number to string ", testNumber);
+		if (strcmp(positive_string, "1234") == 0) {
+			printf("passed\n");
+			}
+		else {
+			failed_tests[last_failed++] = test_Number;
+			printf("FAILED");	
+			}
+
+		...
+		//logs after Tests about failed tests. 			
+*/
 
 int main()
 {
