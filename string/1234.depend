@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1443656778 source:c:\users\dns\desktop\ilab\1234\main.c
+	<stdio.h>
+	<stdlib.h>
+
